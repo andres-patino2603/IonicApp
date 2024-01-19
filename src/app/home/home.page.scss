@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Nunito&family=Rubik+Burned&display=swap');
+#container {
+  text-align: center;
+
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+
+
+.avatar-slide {
+  --border-radius: 0px;
+}
+
+.title-slide {
+  font-family: 'Nunito', sans-serif;
+  color: rgb(56, 115, 115);
+  margin: 10px 0; /* Añadido para ajustar el espacio entre el título y la imagen */
+}
+
+.p-slide {
+  font-family: 'Nunito', sans-serif;
+  color: #2068f6;
+  margin-bottom: 10px; 
+  
+}
+
+.p-swipe {
+  font-family: 'Nunito', sans-serif;
+  color: rgb(151, 166, 160);
+  border: 2px solid rgb(177, 186, 182);
+  border-radius: 10px;
+  margin-top: 10px; 
+}
+swiper-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color:#ffffff;
+}
+
+/* Estilo para los slides */
+swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: auto;
+  background-color: #ffffff;
+  border: 4px solid #232d45; /* Tamaño del borde reducido a 4px */
+  border-radius: 20px;
+  box-sizing: border-box; /* Hace que el tamaño total incluya el borde y el relleno */
+  padding: 16px;
+}
+
+/* Ajustes para el contenedor de cada slide */
+.dv-slide {
+  text-align: center;
+  justify-content: center;
+  max-width: 90%; /* Ajusta el ancho máximo según tus preferencias */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+/* Añade relleno alrededor del contenido */
+
+}
+
+/* Ajustes para la imagen dentro del contenedor del slide */
+.dv-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 50vh; /* Ajusta la altura máxima según tus preferencias */
+  margin-bottom: 20px; /* Añade un espacio entre la imagen y los textos */
+}
