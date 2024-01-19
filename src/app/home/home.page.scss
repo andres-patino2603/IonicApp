@@ -29,12 +29,18 @@
   color: rgb(56, 115, 115);
   margin: 10px 0;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .p-slide {
   font-family: 'Nunito', sans-serif;
   color: #2068f6;
   margin-bottom: 20px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .p-swipe {
@@ -54,7 +60,7 @@ swiper-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   min-width: 400px;
   background-color: #ffffff;
