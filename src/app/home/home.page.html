@@ -1,71 +1,21 @@
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
 
   <swiper-container
     [loop]="true"
     [pagination]="{type: 'bullets', clickable:true}"
     navigation = "true"
   >
-    <swiper-slide>
+  
+    <swiper-slide *ngFor="let slide of slides">
         <div class="dv-slide">
-            <img src="..\assets\Slide1.png"/>
-            <h1 class="title-slide">¡Bienvenido a [Nombre de la App]!</h1>
-            <p class="p-slide">Descubre experiencias en vivo y funciones emocionantes desde la comodidad de tu dispositivo. Explora, compra y disfruta.</p>
+            <img src={{slide.imagePath}}/>
+            <div class="slide-content">
+                <h1 class="title-slide">{{slide.title}}</h1>
+                <p class="p-slide">{{slide.description}}</p>
+            </div>
             <p class="p-swipe">Swipe para continuar</p>
-        </div>
-    </swiper-slide>
-
-    <swiper-slide>
-        <div class="dv-slide">
-            <img src="..\assets\Slide2.png"/>
-            <h1 class="title-slide">Explora eventos de primera clase</h1>
-            <p class="p-slide">Navega a través de una amplia variedad de eventos en vivo y funciones. Desde conciertos de tus artistas favoritos hasta emocionantes eventos deportivos, hay algo para todos.</p>
-            <p class="p-swipe">Swipe para continuar</p>
-        </div>
-    </swiper-slide>
-
-   
-    <swiper-slide>
-        <div class="dv-slide">
-            <img src="..\assets\Slide3.png"/>
-            <h1 class="title-slide">¡Consigue tus boletos en segundos!</h1>
-            <p class="p-slide"><strong> Compra boletos</strong> de manera rápida y segura. Accede a asientos exclusivos y descubre ofertas especiales. ¡No te pierdas la oportunidad de vivir experiencias inolvidables!</p>
-            <p class="p-swipe">Swipe para continuar</p>
-        </div>
-    </swiper-slide>
-
-   
-    <swiper-slide>
-        <div class="dv-slide">
-            <img src="..\assets\Slide4.png"/>
-            <h1 class="title-slide">Descubre ofertas especiales</h1>
-            <p class="p-slide">Explora nuestras ofertas exclusivas y ahorra en la compra de tus boletos. ¡No dejes pasar la oportunidad de disfrutar eventos increíbles a precios increíbles!</p>
-            <p class="p-swipe">Swipe para continuar</p>
-        </div>
-    </swiper-slide>
-
-   
-    <swiper-slide>
-        <div class="dv-slide">
-            <img src="..\assets\Slide5.png"/>
-            <h1 class="title-slide">Mantente actualizado</h1>
-            <p class="p-slide">Recibe notificaciones sobre nuevos eventos, fechas de preventa y actualizaciones importantes. ¡No te pierdas ninguna oportunidad de vivir experiencias únicas!</p>
-            <p class="p-swipe">Swipe para continuar</p>
-        </div>
-    </swiper-slide>
-
-
-    <swiper-slide>
-        <div class="dv-slide">
-            <img src="..\assets\Slide6.png"/>
-            <h1 class="title-slide">Fácil y seguro</h1>
-            <p class="p-slide">Compra tus boletos de manera fácil y segura con nuestro sistema de pago protegido. Garantizamos una experiencia sin complicaciones para que disfrutes al máximo.</p>
-            <p class="p-swipe">Swipe para comenzar</p>
         </div>
     </swiper-slide>
 </swiper-container>
