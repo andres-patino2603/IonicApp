@@ -1,7 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import {Router} from '@angular/router';
 import {Swiper} from 'swiper';
-import { Storage } from '@ionic/storage-angular';
+import { Storage } from '@ionic/storage-angular';//import ionic storage
 
 @Component({
   selector: 'app-home',

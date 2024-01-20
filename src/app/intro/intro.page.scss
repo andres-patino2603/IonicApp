@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Nunito&family=Rubik+Burned&display=swap');
 swiper-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   min-width: 400px;
-  min-height: 600px;
+  min-height: 400px;
   background-color: #ffffff;
   overflow: hidden;
 }
@@ -21,7 +22,19 @@ swiper-slide {
   border-radius: 20px;
   overflow: hidden;
 }
-
+ion-button {
+  --font-family: 'Nunito', sans-serif;
+  --color:rgb(151, 166, 160);
+  --background-activated: rgba(117, 128, 123, 0.47);
+  --border: 2px solid rgb(177, 186, 182);
+  --font-size: 12px;
+  --border-radius: 10px;
+  --border-color: rgb(151, 166, 160);
+  --box-shadow: 1px 2px 6px 0 rgba(117, 128, 123, 0.47);
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+ //------------------------------------------------------------------------------------------------------------\\
 .title-slide {
     font-family: 'Nunito', sans-serif;
     color: rgb(56, 115, 115);
@@ -40,20 +53,7 @@ swiper-slide {
     align-items: center;
     justify-content: center;
   }
-  
-  .p-swipe {
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
-    color: rgb(151, 166, 160);
-    border: 2px solid rgb(177, 186, 182);
-    border-radius: 10px;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow: hidden;
-  }
-  
+    
   .dv-slide {
     text-align: center;
     justify-content: center;
@@ -73,7 +73,7 @@ swiper-slide {
   .dv-slide img {
     width: 40%;
     height: auto;
-    max-height: 50vh;
+    max-height: 50dvh;
     margin-bottom: 20px;
     overflow: hidden;
   }

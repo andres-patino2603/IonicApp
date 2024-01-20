@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router} from '@angular/router';//Importacion del Angular Router
 
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.page.html',
   styleUrls: ['./intro.page.scss'],
 })
-export class IntroPage implements AfterViewInit {
+export class IntroPage implements AfterViewInit{
   swiperParams1 = {
     slidesPerView: 1,
     effect: 'coverflow',
