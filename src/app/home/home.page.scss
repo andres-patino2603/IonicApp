@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Nunito&family=Rubik+Burned&display=swap');
-#container {
+.container {
   text-align: center;
-
 }
 
 #container strong {
@@ -19,8 +18,31 @@
 #container a {
   text-decoration: none;
 }
-
-.avatar-slide {
-  --border-radius: 0px;
+swiper-slide {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
 }
 
+
+swiper-slide img {
+  width: 100%;
+  height: auto; 
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+ion-button {
+  --font-family: 'Nunito', sans-serif;
+  --color:rgb(151, 166, 160);
+  --background-color:rgba(117, 128, 123, 0.47);
+  --background-activated: rgba(117, 128, 123, 0.47);
+  --border: 2px solid rgb(177, 186, 182);
+  --font-size: 12px;
+  --border-radius: 10px;
+  --border-color: rgb(151, 166, 160);
+  --box-shadow: 1px 2px 6px 0 rgba(117, 128, 123, 0.47);
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}

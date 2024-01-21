@@ -1,3 +1,13 @@
-Hola estoy vacio 
+<ion-content [fullscreen]="true">
+    <div id="container">
+        <swiper-container [loop]="true" [pagination]="{type: 'bullets', clickable:true}" navigation="true">
+            <swiper-slide *ngFor="let img of swiper_images">
+                    <img [src]="img" />
+            </swiper-slide>
+        </swiper-container>
+        <ion-button (click)="goToIntro()">Ver Intro</ion-button>
+    </div>
 
-<ion-button (click)="goToIntro()">Ver Intro</ion-button>
+</ion-content>
+
+

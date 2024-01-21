@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';//Importacion del Angular Router
 
+
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.page.html',
