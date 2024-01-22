@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';//Importacion del Angular Router
+import { Storage } from '@ionic/storage-angular';
 
 
 @Component({
@@ -8,7 +9,7 @@ import {Router} from '@angular/router';//Importacion del Angular Router
   styleUrls: ['./intro.page.scss'],
 })
 export class IntroPage implements AfterViewInit{
-  swiperParams1 = {
+  swiperParamsIntro = {
     slidesPerView: 1,
     effect: 'coverflow',
     coverflowEffect: {
@@ -60,17 +61,22 @@ export class IntroPage implements AfterViewInit{
     },
   ]
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private storage: Storage) { }
 
+ 
+  ionViewDidEnter(){
+    console.log('Ya entre y vi la intro')
+    this.storage.set('YaVILaIntro', true);
+  }
+  
   goToIntro(){
     this.router.navigateByUrl('/home');//Doc: https://ionicframework.com/docs/angular/navigation
   };
-
   ngAfterViewInit(): void {
     const swiperEl = document.querySelector('swiper-container');
     if(swiperEl)
     {
-      Object.assign(swiperEl, this.swiperParams1);
+      Object.assign(swiperEl, this.swiperParamsIntro);
     }
 
   }

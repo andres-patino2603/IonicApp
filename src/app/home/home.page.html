@@ -1,7 +1,12 @@
+<ion-header collapse="fade">
+    <ion-toolbar>
+      <ion-title> IonicApp </ion-title>
+    </ion-toolbar>
+  </ion-header>
 <ion-content [fullscreen]="true">
     <div id="container">
-        <swiper-container [loop]="true" [pagination]="{type: 'bullets', clickable:true}" navigation="true">
-            <swiper-slide *ngFor="let img of swiper_images">
+        <swiper-container [loop]="true" navigation="true">
+            <swiper-slide *ngFor="let img of swiper_images" (click)="goToIntro()">
                     <img [src]="img" />
             </swiper-slide>
         </swiper-container>

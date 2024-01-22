@@ -3,12 +3,13 @@ import {Router} from '@angular/router';
 import {Swiper} from 'swiper';
 import { Storage } from '@ionic/storage-angular';//import ionic storage
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements AfterViewInit{
+export class HomePage{
   
   //<ion-button *ngIf="i==1>Hola mundo</ion-button> <---------realizar validaciones (if-else)
   //para usar etiquetas es usar [innerHTML]="variable.lonecesario"
@@ -23,7 +24,7 @@ export class HomePage implements AfterViewInit{
     '../../assets/img-content/img4.png',
 ];
 
-swiperParams1 = {
+swiperParamsHome = {
   effect: 'coverflow',
   autoplay: true,
   grabCursor: true,
@@ -53,10 +54,9 @@ swiperParams1 = {
     const swiperEl = document.querySelector('swiper-container');
     if(swiperEl)
     {
-      Object.assign(swiperEl, this.swiperParams1);
+      Object.assign(swiperEl, this.swiperParamsHome);
     }
-  }
-  
+  }  
   //Funcion para botones/navegacion, importar import {Router} from '@angular/router'; y declarar luego en el constructor
   goToIntro(){
     this.router.navigateByUrl('/intro');//Doc: https://ionicframework.com/docs/angular/navigation
