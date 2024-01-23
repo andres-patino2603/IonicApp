@@ -4,6 +4,12 @@
     [loop]="true"
     [pagination]="{type: 'bullets', clickable:true}"
     navigation = "true"
+    slideperview="1"
+    [effect]="'coverflow'"
+    [coverflowEffect]="{
+    'rotate': 40,
+    'slideShadows': true
+  }"
   >
     <swiper-slide *ngFor="let slide of slides">
         <div class="dv-slide">

@@ -8,21 +8,8 @@ import { Storage } from '@ionic/storage-angular';
   templateUrl: './intro.page.html',
   styleUrls: ['./intro.page.scss'],
 })
-export class IntroPage implements AfterViewInit{
-  swiperParamsIntro = {
-    slidesPerView: 1,
-    effect: 'coverflow',
-    coverflowEffect: {
-      rotate: 40,
-      slideShadows: true,
-    },
-    
-    on: {
-      init(){
-
-      },
-    }
-  };
+export class IntroPage{
+  
   //<ion-button *ngIf="i==1>Hola mundo</ion-button> <---------realizar validaciones (if-else)
   //para usar etiquetas es usar [innerHTML]="variable.lonecesario"
   //git add .
@@ -72,12 +59,5 @@ export class IntroPage implements AfterViewInit{
   goToIntro(){
     this.router.navigateByUrl('/home');//Doc: https://ionicframework.com/docs/angular/navigation
   };
-  ngAfterViewInit(): void {
-    const swiperEl = document.querySelector('swiper-container');
-    if(swiperEl)
-    {
-      Object.assign(swiperEl, this.swiperParamsIntro);
-    }
 
-  }
 }
