@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center ion-text-uppercase">login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <figure class="ion-text-center">
+    <ion-avatar class="center-avatar">
+      <img src="../../assets/icon/favicon.png" alt="logo" class="logo">
+    </ion-avatar>
+  </figure>
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <ion-item>
+      <ion-input [clearInput]="true"  label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
+      <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+    </ion-item>
+    <div class="validation_messages">
+      <ng-container *ngFor="let campos of ['email', 'password']">
+        <ng-container *ngFor="let validation of validation_messages[campos]">
+          <div *ngIf="
+            (loginForm.get(campos)?.hasError(validation.type) && 
+            loginForm.get(campos)?.dirty)
+          ">
+            {{validation.message}}
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+    
+    <div class="ion-text-center">
+      <ion-button class = "center-button" type="submit" [disabled]="!loginForm.valid">login</ion-button>
+    </div>
+  </form>
+  <div class="ion-text-center">
+    <ion-button (click)="goToRegister()" fill="clear" size="small" class="center-button"> ¿Aún no tienes una cuenta?</ion-button>
+  </div>
+  <div class="validation_messages">
+    {{loginMessage}}
+  </div>
+</ion-content>

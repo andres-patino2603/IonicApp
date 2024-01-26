@@ -2,8 +2,8 @@
 .container {
   text-align: center;
   justify-content: center;
-  max-width: 80vw;
-  width: 70%;
+  max-width: 80dvw;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
   box-sizing: border-box;
@@ -45,12 +45,15 @@ swiper-slide {
   display: flex;
   width: 100%;
 }
+
 swiper-container {
+   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
   overflow: hidden;
+  --swiper-navigation-color:var(--your-navigation-color, #ff0000);
 }
 
 swiper-slide img {
@@ -62,14 +65,26 @@ swiper-slide img {
 }
 ion-button {
   --font-family: 'Nunito', sans-serif;
-  --color:rgb(151, 166, 160);
-  --background-color:rgba(117, 128, 123, 0.47);
+  --background:rgba(117, 128, 123, 0.47);
   --background-activated: rgba(117, 128, 123, 0.47);
+  --color:rgb(0, 0, 0);
   --border: 2px solid rgb(177, 186, 182);
   --font-size: 12px;
   --border-radius: 10px;
   --border-color: rgb(151, 166, 160);
   --box-shadow: 1px 2px 6px 0 rgba(117, 128, 123, 0.47);
-  --padding-top: 10px;
-  --padding-bottom: 10px;
+  --padding-top: 1px;
+  --padding-bottom: 1px;
+  --width: 10px;
+  --height: 10px;
+  
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    color: #ccc;
+}
+.hola{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
