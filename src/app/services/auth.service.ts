@@ -20,8 +20,8 @@ export class AuthService {
   registerUser(credential: any){
     return new Promise((accept, reject)=>
     {
-      if(credential.email!='andrespatino0845@gmail.com' && credential.password!='Password123'){
-        accept('El registro a sido exitoso');
+      if(credential.email!='andrespatino0845@gmail.com'){
+        accept('El registro ha sido exitoso');
       }else{
         reject('El usuario ya existe');
       }

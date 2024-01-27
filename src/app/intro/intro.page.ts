@@ -50,7 +50,7 @@ export class IntroPage{
 
   constructor(private router: Router, private storage: Storage) { }
 
- 
+
   ionViewDidEnter(){
     console.log('Ya entre y vi la intro')
     this.storage.set('YaVILaIntro', true);

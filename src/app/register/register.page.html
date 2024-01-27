@@ -1,27 +1,93 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-title class="ion-text-center">Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-content>
-    <figure class="ion-text-center">
-      <ion-avatar class="center-avatar">
-        <img src="../../assets/icon/favicon.png" alt="logo" class="logo">
-      </ion-avatar>
-    </figure>
-  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
-    <ion-item>
-      <ion-input [clearInput]="true"  label="Nombre" labelPlacement="floating" placeholder="Nombre" formControlName="name"></ion-input>
-      <ion-input [clearInput]="true"  label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="lastName"></ion-input>
-      <ion-input [clearInput]="true"  label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
-      <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="Contraseña" formControlName="password"></ion-input>
-      <ion-input [clearInput]="true"  label="Confirmar Contraseña" labelPlacement="floating" type="password" placeholder="Confirmar Contraseña" formControlName="confirmPassword"></ion-input>
-      
-    </ion-item>
-    <div class="ion-text-center">
-      <ion-button (click)="register(registerForm.value)" class = "center-button" color ="success"type="submit" [disabled]="!registerForm.valid">login</ion-button>
-    </div>
-  </form>
+  <div class="registration-container">
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="register(registerForm.value)"
+      class="registration-form"
+    >
+      <figure class="ion-text-center">
+        <ion-avatar class="center-avatar">
+          <img src="../../assets/icon/favicon.png" alt="logo" class="logo" />
+        </ion-avatar>
+      </figure>
+      <ion-item>
+        <ion-input
+          [clearInput]="true"
+          label="Nombre"
+          labelPlacement="floating"
+          placeholder="Nombre"
+          formControlName="name"
+          class="custom"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          [clearInput]="true"
+          label="Apellido"
+          labelPlacement="floating"
+          placeholder="Apellido"
+          formControlName="lastName"
+        ></ion-input>
+        <ion-input
+          [clearInput]="true"
+          label="Email"
+          labelPlacement="floating"
+          placeholder="Email"
+          formControlName="email"
+        ></ion-input>
+        <ion-input
+          label="Contraseña"
+          labelPlacement="floating"
+          type="password"
+          placeholder="Contraseña"
+          formControlName="password"
+        ></ion-input>
+        <ion-input
+          label="Confirmar Contraseña"
+          labelPlacement="floating"
+          type="password"
+          placeholder="Confirmar Contraseña"
+          formControlName="confirmPassword"
+        ></ion-input>
+
+        <div class="validation_messages">
+          <ng-container
+            *ngFor="let campos of ['email', 'password', 'confirmPassword', 'name', 'lastName']"
+          >
+            <ng-container
+              *ngFor="let validation of validation_messages[campos]"
+            >
+              <div
+                *ngIf="
+            (registerForm.get(campos)?.hasError(validation.type) && 
+              registerForm.get(campos)?.dirty)
+              "
+              >
+                {{validation.message}}
+              </div>
+              <div *ngIf="registerForm.hasError('mustBeEqual')">
+                -No coinciden las contraseñas
+              </div>
+            </ng-container>
+          </ng-container>
+        </div>
+      </ion-item>
+      <div class="">
+        <ion-button
+          class="center-button"
+          (click)="register(registerForm.value)"
+          color="success"
+          type="submit"
+          [disabled]="!registerForm.valid"
+          >Registrarse</ion-button
+        >
+      </div>
+    </form>
+  </div>
 </ion-content>

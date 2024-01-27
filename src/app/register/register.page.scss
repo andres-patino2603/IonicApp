@@ -1,0 +1,80 @@
+ion-input {
+  --background-color: #0033ff;
+  --color: black;
+  margin-bottom: 10px;
+  --border-radius: 10px 10px 10px 0px;
+  --highlight-color-focused: #ff3838;
+  --highlight-color-valid: #ddff00;
+  --highlight-color-invalid: #00ff04;
+
+  display: block;
+}
+ion-item {
+  --background: rgba(0, 0, 0, 0);
+}
+ion-content {
+  --background: none;
+  /* Ajusta la ruta según la ubicación de tu imagen */
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+figure {
+  padding-bottom: 10px;
+}
+.center-avatar {
+  margin: auto;
+  margin-top: 10px;
+}
+form {
+  background: #fff;
+}
+
+.registration-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Toma el 100% de la altura de la ventana */
+  background: url("../../assets/img-content/wall.jpg") center center/cover
+    no-repeat fixed;
+}
+.registration-form {
+  width: 100%; /* Puedes ajustar el ancho máximo según tus preferencias */
+  max-width: 400px; /* Ancho máximo para pantallas grandes */
+  background-color: #564a4a77; /* Color de fondo gris */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 40px; /* Bordes redondeados, ajusta según sea necesario */
+  margin: auto; /* Centrar horizontalmente */
+  box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+}
+.registration-form ion-title,
+.registration-form ion-input,
+.registration-form ion-button {
+  font-size: 1em; /* Puedes ajustar según tus preferencias */
+}
+ion-button {
+  --font-family: "Nunito", sans-serif;
+  --background: rgba(117, 128, 123, 0.47);
+  --background-activated: rgba(117, 128, 123, 0.47);
+  --color: rgb(0, 0, 0);
+  --border: 2px solid rgb(177, 186, 182);
+  --font-size: 12px;
+  --border-radius: 10px;
+  --border-color: rgb(151, 166, 160);
+  --box-shadow: 1px 2px 6px 0 rgba(117, 128, 123, 0.47);
+  --padding-top: 1px;
+  --padding-bottom: 1px;
+  --width: 10px;
+  --height: 10px;
+  margin: 8px auto;
+}
+
+.center-button {
+  margin: auto;
+  padding: 10px;
+}
+
+.validation_messages {
+  background: #ff0000;
+}

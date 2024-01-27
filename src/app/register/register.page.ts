@@ -1,7 +1,18 @@
+import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormControlName,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -10,85 +21,128 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class RegisterPage implements OnInit {
   registerForm: FormGroup;
+  validation_messages: {
+    email: { type: string; message: string }[];
+    password: { type: string; message: string }[];
+    name: { type: string; message: string }[];
+    lastName: { type: string; message: string }[];
+    confirmPassword: { type: string; message: string }[];
+    [key: string]: { type: string; message: string }[]; // Firma del índice
+  } = {
+    email: [
+      { type: 'required', message: 'El Email es obligatorio' },
+      { type: 'pattern', message: 'El Email ingresado es invalido' },
+    ],
+    password: [
+      { type: 'required', message: 'La contraseña es obligatoria' },
+      {
+        type: 'pattern',
+        message: 'La contraseña debe contener mayúsculas, minúsculas y números',
+      },
+      {
+        type: 'minlength',
+        message: 'La contraseña debe superar los 8 caracteres',
+      },
+    ],
+    name: [
+      { type: 'required', message: 'El nombre es obligatorio' },
+      { type: 'pattern', message: 'El nombre solo puede contener letras' },
+    ],
+    lastName: [
+      { type: 'required', message: 'El apellido es obligatorio' },
+      { type: 'pattern', message: 'El apellido solo puede contener letras' },
+    ],
+    confirmPassword: [
+      {
+        type: 'required',
+        message: 'La confirmación de la contraseña es obligatoria',
+      },
+      {
+        type: 'pattern',
+        message:
+          'La confirmación de la contraseña debe contener mayúsculas, minúsculas y números',
+      },
+      { type: 'match', message: 'Las contraseñas no coinciden' },
+    ],
+  };
 
-  constructor(private formBuilder: FormBuilder,
+  registerMessage: any;
+  constructor(
+    private formBuilder: FormBuilder,
     private navCtrl: NavController,
-    private storage: Storage) { 
-      this.registerForm = this.formBuilder.group({
+    private storage: Storage,
+    private authService: AuthService
+  ) {
+    this.registerForm = this.formBuilder.group(
+      {
         email: new FormControl(
-          "",
+          '',
           Validators.compose([
             Validators.required,
             Validators.pattern(
-              "^[a-zA-Z0-9_.+-]+@[a-zA-Z-0-9-]+.[a-zA-Z0-9-.]+$"
+              '^[a-zA-Z0-9_.+-]+@[a-zA-Z-0-9-]+.[a-zA-Z0-9-.]+$'
             ),
           ])
         ),
         password: new FormControl(
-          "",
+          '',
           Validators.compose([
             Validators.required,
-            Validators.minLength(8),  
-            Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/),
+            Validators.minLength(8),
+            Validators.pattern(/^(?=.*[a-zA-ZÑñ])(?=.*[A-ZÑñ])(?=.*\d).{8,}$/),
           ])
         ),
         name: new FormControl(
-          "",Validators.compose([
+          '',
+          Validators.compose([
             Validators.required,
-            Validators.pattern("^[a-zA-Z]+$"),
+            Validators.pattern('^[a-zA-ZÑñ]+$'),
           ])
-          
         ),
         lastName: new FormControl(
-          "",Validators.compose([
+          '',
+          Validators.compose([
             Validators.required,
-            Validators.pattern("^[a-zA-Z]+$"),
+            Validators.pattern('^[a-zA-ZÑñ]+$'),
           ])
-          
         ),
         confirmPassword: new FormControl(
-          "",Validators.compose([
+          '',
+          Validators.compose([
             Validators.required,
-            Validators.minLength(8),  
-            Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/),
+            Validators.pattern(/^(?=.*[a-zA-ZÑñ])(?=.*[A-ZÑñ])(?=.*\d).{8,}$/),
           ])
-          
         ),
-      },{
-        Validators: this.ConfPass('password', 'confirmPassword'),
-      })
-    }
-
-  ngOnInit() {
-    
-  }
-  PassNovalido(){
-    const pass1 = this.registerForm.get('password')?.value;
-    const pass2 = this.registerForm.get('confirmPassword')?.value;
-
-    if(pass1 !== pass2){
-      return true;
-    }else{
-      return false;
-    }
-  }
-  ConfPass(pass: string, pass2:string) {
-  
-    return (FormGroup: FormGroup) => {
-      const pass1control = FormGroup.get(pass);
-      const pass2control = FormGroup.get(pass2);
-
-      if(pass1control?.value === pass2control?.value){
-        pass2control?.setErrors(null);
-      }else{
-        pass2control?.setErrors({NoEsIgual: true});
+      },
+      {
+        // Validators: this.mustBeEqualValidator('password', 'confirmPassword'),
+        validator: this.match,
       }
+    );
+  }
 
+  ngOnInit() {}
+  match(control: AbstractControl): void | null {
+    const passwordControl = control.get('password');
+    const confirmPasswordControl = control.get('confirmPassword');
+    if (passwordControl?.pristine || confirmPasswordControl?.pristine) {
+      return null;
     }
+    if (passwordControl?.value === confirmPasswordControl?.value) {
+      return null;
+    }
+    confirmPasswordControl?.setErrors({ match: true });
   }
 
   register(register_data: any) {
-    console.log(this.PassNovalido());
-    
+    console.log('Datos del formulario:', register_data);
+    this.authService
+      .registerUser(register_data)
+      .then((res) => {
+        this.registerMessage = res;
+      })
+      .catch((err) => {
+        this.registerMessage = err;
+      });
   }
 }
