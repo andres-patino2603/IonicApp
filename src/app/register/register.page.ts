@@ -120,6 +120,9 @@ export class RegisterPage implements OnInit {
       }
     );
   }
+  goToLogin() {
+    this.navCtrl.navigateForward('/login'); //Doc: https://ionicframework.com/docs/angular/navigation
+  }
 
   ngOnInit() {}
   match(control: AbstractControl): void | null {

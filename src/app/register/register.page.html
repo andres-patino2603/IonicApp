@@ -78,15 +78,9 @@
           </ng-container>
         </div>
       </ion-item>
-      <div class="">
-        <ion-button
-          class="center-button"
-          (click)="register(registerForm.value)"
-          color="success"
-          type="submit"
-          [disabled]="!registerForm.valid"
-          >Registrarse</ion-button
-        >
+      <div class="ion-text-center">
+        <ion-button (click)="register(registerForm.value)" class="center-button"  type="submit" [disabled]="!registerForm.valid">Registrarse</ion-button>
+        <a (click)="goToLogin()">¿Ya tienes una cuenta?</a>
       </div>
     </form>
   </div>

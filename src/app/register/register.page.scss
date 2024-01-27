@@ -1,24 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Nunito&family=Rubik+Burned&display=swap');
 ion-input {
-  --background-color: #0033ff;
-  --color: black;
+  --background-color: #ffffff;
+  --color: rgb(0, 0, 0);
   margin-bottom: 10px;
-  --border-radius: 10px 10px 10px 0px;
-  --highlight-color-focused: #ff3838;
-  --highlight-color-valid: #ddff00;
-  --highlight-color-invalid: #00ff04;
+  --highlight-color-focused: #2f7bff;
+  --highlight-color-valid: #1fef3e;
+  --highlight-color-invalid: #701212;
+  --font-weight: bolder;
 
   display: block;
 }
 ion-item {
   --background: rgba(0, 0, 0, 0);
 }
-ion-content {
-  --background: none;
-  /* Ajusta la ruta según la ubicación de tu imagen */
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 figure {
   padding-bottom: 10px;
 }
@@ -26,27 +21,24 @@ figure {
   margin: auto;
   margin-top: 10px;
 }
-form {
-  background: #fff;
-}
 
 .registration-container {
+  font-family: 'Nunito', sans-serif;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Toma el 100% de la altura de la ventana */
-  background: url("../../assets/img-content/wall.jpg") center center/cover
-    no-repeat fixed;
+  justify-content: center; 
+  background: url("../../assets/img-content/wall.jpg") center center/cover no-repeat fixed;
 }
 .registration-form {
-  width: 100%; /* Puedes ajustar el ancho máximo según tus preferencias */
-  max-width: 400px; /* Ancho máximo para pantallas grandes */
-  background-color: #564a4a77; /* Color de fondo gris */
-  padding: 20px; /* Espaciado interno */
-  border-radius: 40px; /* Bordes redondeados, ajusta según sea necesario */
-  margin: auto; /* Centrar horizontalmente */
-  box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+  font-family: 'Nunito', sans-serif;
+  width: 100dvw; 
+  max-width: 400px;
+  background-color: #5e5a5a93; 
+  border-radius: 40px;
+  margin: auto; 
+  box-sizing: border-box; 
 }
 .registration-form ion-title,
 .registration-form ion-input,
@@ -54,27 +46,30 @@ form {
   font-size: 1em; /* Puedes ajustar según tus preferencias */
 }
 ion-button {
-  --font-family: "Nunito", sans-serif;
-  --background: rgba(117, 128, 123, 0.47);
-  --background-activated: rgba(117, 128, 123, 0.47);
-  --color: rgb(0, 0, 0);
-  --border: 2px solid rgb(177, 186, 182);
-  --font-size: 12px;
+  --font-family: 'Nunito', sans-serif;
+  --color: rgb(255, 255, 255); /* Cambiado a blanco para el color del texto */
+  --background: rgba(23, 163, 184, 0.745); /* Cambiado a un color azul */
+  --background-activated: rgba(23, 162, 184, 0.8);
+  --background-focused: rgba(23, 162, 184, 0.8);
+  --background-hover: rgba(23, 162, 184, 0.8);
+  --border: none; /* Cambiado a ninguno para eliminar el borde */
+  --font-size: 16px; /* Ajustado el tamaño del texto */
   --border-radius: 10px;
-  --border-color: rgb(151, 166, 160);
-  --box-shadow: 1px 2px 6px 0 rgba(117, 128, 123, 0.47);
-  --padding-top: 1px;
-  --padding-bottom: 1px;
-  --width: 10px;
-  --height: 10px;
-  margin: 8px auto;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Cambiado el efecto de sombra */
+  --padding-top: 10px;
 }
 
 .center-button {
   margin: auto;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
 .validation_messages {
-  background: #ff0000;
+  color: #f52c2c;
+  background: rgba(95, 87, 87, 0.792);
+}
+.ion-text-center a {
+  display: block;
+  margin-bottom: 20px;
 }
