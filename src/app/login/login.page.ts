@@ -57,6 +57,7 @@ export class LoginPage implements OnInit {
           ),
         ])
       ),
+      //Hacer validators de password
       password: new FormControl(
         '',
         Validators.compose([

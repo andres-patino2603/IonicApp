@@ -17,10 +17,10 @@ export class AuthService {
       }
     });
   }
-  registerUser(credential: any){
+  registerUser(credential2: any){
     return new Promise((accept, reject)=>
     {
-      if(credential.email!='andrespatino0845@gmail.com'){
+      if(credential2.email!='andrespatino0845@gmail.com'){
         accept('El registro ha sido exitoso');
       }else{
         reject('El usuario ya existe');

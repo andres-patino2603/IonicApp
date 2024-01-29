@@ -84,6 +84,8 @@ export class RegisterPage implements OnInit {
             ),
           ])
         ),
+
+        //validaciones para pass, conmf_pass, name y last-name junto a message_validations
         password: new FormControl(
           '',
           Validators.compose([
@@ -139,9 +141,7 @@ export class RegisterPage implements OnInit {
 
   register(register_data: any) {
     console.log('Datos del formulario:', register_data);
-    this.authService
-      .registerUser(register_data)
-      .then((res) => {
+    this.authService.registerUser(register_data).then((res) => {
         this.registerMessage = res;
       })
       .catch((err) => {

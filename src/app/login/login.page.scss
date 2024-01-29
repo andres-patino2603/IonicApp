@@ -1,14 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Nunito&family=Rubik+Burned&display=swap');
+ion-input {
+  --background-color: #ffffff;
+  --color: rgb(0, 0, 0);
+  margin-bottom: 10px;
+  --highlight-color-focused: #2f7bff;
+  --highlight-color-valid: #1fef3e;
+  --highlight-color-invalid: #701212;
+  --font-weight: bolder;
+
+  display: block;
+}
+ion-item {
+  --background: rgba(0, 0, 0, 0);
+}
+
+figure {
+  padding-bottom: 10px;
+}
 .center-avatar {
   margin: auto;
+  margin-top: 10px;
 }
+
+.login-container {
+  font-family: 'Nunito', sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  background: url("../../assets/img-content/wall.jpg") center center/cover no-repeat fixed;
+}
+.login-form {
+  font-family: 'Nunito', sans-serif;
+  width: 100dvw; 
+  max-width: 400px;
+  background-color: #5e5a5a93; 
+  border-radius: 40px;
+  margin: auto; 
+  box-sizing: border-box; 
+}
+.login-form ion-title,
+.login-form ion-input,
+.login-form ion-button {
+  font-size: 1em; /* Puedes ajustar según tus preferencias */
+}
+.login-button {
+  --font-family: 'Nunito', sans-serif;
+  --color: rgb(255, 255, 255);
+  --background: rgba(23, 163, 184, 0.745);
+  --background-activated: rgba(23, 162, 184, 0.8);
+  --background-focused: rgba(23, 162, 184, 0.8);
+  --background-hover: rgba(23, 162, 184, 0.8);
+  --border: none;
+  --font-size: 16px;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+  margin-bottom: 5px; /* Ajusta este margen según sea necesario */
+}
+
+/* Estilos para el botón de registro */
+.register-button {
+  --font-family: 'Nunito', sans-serif;
+  --color: rgba(141, 236, 238, 0.752);
+  --background: none;
+  --background-activated: none;
+  --background-focused: none;
+  --background-hover: none;
+  --border: none;
+  --font-size: 6px;
+  --border-radius: 10px;
+  --box-shadow: none;
+padding-top: 10px;
+margin-top: 5px;
+ /* Ajusta este margen según sea necesario */
+}
+
 .center-button {
   margin: auto;
   padding: 10px;
 }
 
 .validation_messages {
-  color: rgba(203, 45, 45, 0.839);
-  font-size: 12px;
-  margin-top: 5px;
-  //mejorar estilo de presentación de mesaje de error... idea: usar popover
+  color: #f52c2c;
+  background: rgba(95, 87, 87, 0.792);
+}
+.ion-text-center a {
+  display: block;
+  margin-bottom: 20px;
 }

@@ -20,7 +20,7 @@ export class LoginGuard implements CanActivate {
       return true;
     }else{
       console.log("El usuario no esta logueado");
-      this.router.navigateByUrl('/intro');
+      this.router.navigateByUrl('/login');
       return false;
     }
   }

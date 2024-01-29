@@ -6,10 +6,7 @@
 
 <ion-content>
   <div class="registration-container">
-    <form
-      [formGroup]="registerForm"
-      (ngSubmit)="register(registerForm.value)"
-      class="registration-form"
+    <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)" class="registration-form"
     >
       <figure class="ion-text-center">
         <ion-avatar class="center-avatar">
@@ -17,49 +14,20 @@
         </ion-avatar>
       </figure>
       <ion-item>
-        <ion-input
-          [clearInput]="true"
-          label="Nombre"
-          labelPlacement="floating"
-          placeholder="Nombre"
-          formControlName="name"
-          class="custom"
+        <ion-input [clearInput]="true" label="Nombre" labelPlacement="floating" placeholder="Nombre" formControlName="name"
         ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input
-          [clearInput]="true"
-          label="Apellido"
-          labelPlacement="floating"
-          placeholder="Apellido"
-          formControlName="lastName"
+        <ion-input [clearInput]="true" label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="lastName"
         ></ion-input>
-        <ion-input
-          [clearInput]="true"
-          label="Email"
-          labelPlacement="floating"
-          placeholder="Email"
-          formControlName="email"
+        <ion-input [clearInput]="true" label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"
         ></ion-input>
-        <ion-input
-          label="Contraseña"
-          labelPlacement="floating"
-          type="password"
-          placeholder="Contraseña"
-          formControlName="password"
+        <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="Contraseña" formControlName="password"
         ></ion-input>
-        <ion-input
-          label="Confirmar Contraseña"
-          labelPlacement="floating"
-          type="password"
-          placeholder="Confirmar Contraseña"
-          formControlName="confirmPassword"
+        <ion-input label="Confirmar Contraseña" labelPlacement="floating" type="password" placeholder="Confirmar Contraseña" formControlName="confirmPassword"
         ></ion-input>
 
         <div class="validation_messages">
           <ng-container
-            *ngFor="let campos of ['email', 'password', 'confirmPassword', 'name', 'lastName']"
-          >
+            *ngFor="let campos of ['email', 'password', 'confirmPassword', 'name', 'lastName']">
             <ng-container
               *ngFor="let validation of validation_messages[campos]"
             >
@@ -79,9 +47,11 @@
         </div>
       </ion-item>
       <div class="ion-text-center">
+        <div>{{registerMessage}}</div>
         <ion-button (click)="register(registerForm.value)" class="center-button"  type="submit" [disabled]="!registerForm.valid">Registrarse</ion-button>
         <a (click)="goToLogin()">¿Ya tienes una cuenta?</a>
       </div>
     </form>
+
   </div>
 </ion-content>
