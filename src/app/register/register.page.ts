@@ -123,7 +123,7 @@ export class RegisterPage implements OnInit {
     );
   }
   goToLogin() {
-    this.navCtrl.navigateForward('/login'); //Doc: https://ionicframework.com/docs/angular/navigation
+    this.navCtrl.navigateBack('/login'); //Doc: https://ionicframework.com/docs/angular/navigation
   }
 
   ngOnInit() {}

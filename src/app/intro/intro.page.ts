@@ -57,7 +57,7 @@ export class IntroPage{
   }
   
   goToIntro(){
-    this.router.navigateByUrl('/home');//Doc: https://ionicframework.com/docs/angular/navigation
+    this.router.navigateByUrl('/menu/home');//Doc: https://ionicframework.com/docs/angular/navigation
   };
 
 }

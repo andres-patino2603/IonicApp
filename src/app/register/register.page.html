@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Registro</ion-title>
+    <ion-buttons>
+      <ion-button (click)="goToLogin()"> Volver</ion-button>    <ion-title class="ion-text-center">Registro</ion-title>
+    </ion-buttons> 
+
   </ion-toolbar>
 </ion-header>
 
@@ -24,7 +27,7 @@
         ></ion-input>
         <ion-input label="Confirmar Contraseña" labelPlacement="floating" type="password" placeholder="Confirmar Contraseña" formControlName="confirmPassword"
         ></ion-input>
-
+      </ion-item>
         <div class="validation_messages">
           <ng-container
             *ngFor="let campos of ['email', 'password', 'confirmPassword', 'name', 'lastName']">
@@ -32,20 +35,15 @@
               *ngFor="let validation of validation_messages[campos]"
             >
               <div
-                *ngIf="
-            (registerForm.get(campos)?.hasError(validation.type) && 
-              registerForm.get(campos)?.dirty)
-              "
+                *ngIf="(registerForm.get(campos)?.hasError(validation.type) && 
+              registerForm.get(campos)?.dirty)"
               >
                 {{validation.message}}
-              </div>
-              <div *ngIf="registerForm.hasError('mustBeEqual')">
-                -No coinciden las contraseñas
               </div>
             </ng-container>
           </ng-container>
         </div>
-      </ion-item>
+
       <div class="ion-text-center">
         <div>{{registerMessage}}</div>
         <ion-button (click)="register(registerForm.value)" class="center-button"  type="submit" [disabled]="!registerForm.valid">Registrarse</ion-button>

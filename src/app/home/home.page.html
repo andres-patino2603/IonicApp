@@ -1,11 +1,16 @@
-<ion-header collapse="fade">
-    <ion-toolbar>
-      <ion-title> IonicApp </ion-title>
-    </ion-toolbar>
-  </ion-header>
-<ion-content [fullscreen]="true">
-    <div id="container">
-      <swiper-container [loop]="true" navigation="true"
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot ="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>HOME</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div id="container">
+      <swiper-container 
+      [loop]="true" 
+      navigation="true"
       [autoplay]="{ delay: 3000, pauseOnMouseEnter: true }"
       [grabCursor]="true"
       [centeredSlider]="true"
@@ -19,15 +24,13 @@
         speed: 80,
         slideShadows: true
       }">
-      <swiper-slide *ngFor="let item of swiper_items" (click)="goToIntro()" [style.background-color]="item.color">
-        <img [src]="item.img" />
-        <!-- Puedes agregar más contenido según sea necesario -->
+       <swiper-slide *ngFor="let item of event_list">
+        <img src="{{item.image}}">
       </swiper-slide>
     </swiper-container>
     <div class="hola"><ion-button (click)="goToIntro()">Ver Intro</ion-button></div>
         
     </div>
-
 </ion-content>
 
 
