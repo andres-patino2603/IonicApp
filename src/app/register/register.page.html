@@ -1,12 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons>
-      <ion-button (click)="goToLogin()"> Volver</ion-button>    <ion-title class="ion-text-center">Registro</ion-title>
-    </ion-buttons> 
 
+<ion-header >
+  <ion-toolbar color="light">
+    <ion-buttons>
+      <ion-button (click)="goToLogin()" class="btnVolver"> Volver</ion-button>    
+      <ion-title class="ion-text-center">Registro</ion-title>
+    </ion-buttons> 
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <div class="registration-container">
     <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)" class="registration-form"

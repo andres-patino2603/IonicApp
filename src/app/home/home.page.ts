@@ -27,6 +27,7 @@ export class HomePage {
   event_list: any;
   categoryById_list: any;
   categoryList: any;
+  local_events: any;
   constructor(
     private router: Router,
     private storage: Storage,
@@ -49,6 +50,7 @@ export class HomePage {
       console.log('Lista Id Categoria: ', res);
     });
     console.log('Local Events: ', this.events.getLocalEvents().events);
+    this.local_events = this.events.getLocalEvents().events;
   }
 
   //Funcion para botones/navegacion, importar import {Router} from '@angular/router'; y declarar luego en el constructor

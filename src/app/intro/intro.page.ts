@@ -1,6 +1,8 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Router} from '@angular/router';//Importacion del Angular Router
+import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -48,7 +50,8 @@ export class IntroPage{
     },
   ]
 
-  constructor(private router: Router, private storage: Storage) { }
+  constructor(private router: Router, private storage: Storage, private menu: MenuController,
+    private navCtrl: NavController) { }
 
 
   ionViewDidEnter(){
@@ -59,5 +62,13 @@ export class IntroPage{
   goToIntro(){
     this.router.navigateByUrl('/menu/home');//Doc: https://ionicframework.com/docs/angular/navigation
   };
+
+  closeMenu(){
+    console.log("cerrar menú")
+    this.menu.close();
+  }
+  logout(){
+    this.navCtrl.navigateBack('/login');
+  }
 
 }

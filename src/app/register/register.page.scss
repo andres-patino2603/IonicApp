@@ -14,6 +14,7 @@ ion-item {
   --background: rgba(0, 0, 0, 0);
 }
 
+
 figure {
   padding-bottom: 10px;
 }
@@ -58,7 +59,20 @@ ion-button {
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Cambiado el efecto de sombra */
   --padding-top: 10px;
 }
-
+.btnVolver{
+  --font-family: "Nunito", sans-serif;
+  --color: rgb(255, 255, 255);
+  --background: rgb(49, 48, 48);
+  --background-activated: rgba(23, 162, 184, 0.8);
+  --background-focused: rgba(23, 162, 184, 0.8);
+  --background-hover: rgba(23, 162, 184, 0.8);
+  --border: 1px solid black;
+  --font-size: 16px;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --padding-top: 10px;
+  margin-left: 10px;
+}
 .center-button {
   margin: auto;
   padding: 10px;

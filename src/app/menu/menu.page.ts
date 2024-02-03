@@ -22,6 +22,9 @@ export class MenuPage implements OnInit {
   logout(){
     this.navCtrl.navigateBack('/login');
   }
+  GoToIntro(){
+    this.navCtrl.navigateBack('/intro');
+  }
   
 
 }

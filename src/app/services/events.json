@@ -1,32 +1,116 @@
-{ 
+{
     "events": [
         {
             "id": 2,
-            "name": "JUNIOR VS MEDELLIN 2024-1 ",
+            "name": "JUNIOR VS MEDELLIN 2024-1",
             "event_date": "2024-02-01T00:00:00.000Z",
-            "description": "Encuentro futbolístico vibrante entre el Junior de Barranquilla, El Tiburón, y el Independiente Medellín, El Poderoso de la Montaña. Dos titanes del fútbol colombiano se enfrentan en un emocionante duelo lleno de pasión y rivalidad.",
+            "description": "Encuentro futbolístico vibrante entre el Junior de Barranquilla y el Independiente Medellín. Dos titanes del fútbol colombiano se enfrentan en un emocionante duelo lleno de pasión y rivalidad.",
             "location": null,
             "address": "Av. Circunvalar con Cll Murillo",
-            "minimun_age": 0,
+            "minimum_age": 0,
             "image": "https://tuboleta.com/imagenes/65b9553b14d87.webp",
             "created_at": "2024-01-30T23:37:04.305Z",
             "updated_at": "2024-01-30T23:37:04.305Z",
             "category_id": 1,
-            "city": " Barranquilla"
+            "city": "Barranquilla"
         },
         {
             "id": 3,
-            "name": "COPA DAVIS GRUPO MUNDIAL I : COLOMBIA VS LUXEMBURGO",
+            "name": "COPA DAVIS GRUPO MUNDIAL I: COLOMBIA VS LUXEMBURGO",
             "event_date": "2024-02-02T00:00:00.000Z",
             "description": "Nuestro país buscará una victoria que lo acerque al objetivo de estar una vez más al Grupo Mundial de la Copa Davis. Los aficionados vivirán un fin de semana para apoyar de cerca a las mejores raquetas del tenis colombiano, nuestros jugadores dejarán todo en el campo de juego en una oportunidad única para ver a la selección Colombia de tenis compitiendo en casa.",
             "location": "Club Bellavista Colsubsidio",
             "address": "Autopista Norte # 245 - 91",
-            "minimun_age": 2,
+            "minimum_age": 2,
             "image": "https://tuboleta.com/imagenes/659eaf6d82674.webp",
             "created_at": "2024-01-30T23:38:52.064Z",
             "updated_at": "2024-01-30T23:38:52.064Z",
             "category_id": 1,
-            "city": "Bogota"
-        }
+            "city": "Bogotá"
+        },
+        {
+            "id": 4,
+            "name": "EVENTO 1",
+            "event_date": "2024-02-03T00:00:00.000Z",
+            "description": "Descripción del Evento 1.",
+            "location": "Ubicación del Evento 1",
+            "address": "Dirección del Evento 1",
+            "minimum_age": 18,
+            "image": "https://tuboleta.com/imagenes/659eaf6d82674.webp",
+            "created_at": "2024-02-01T12:00:00.000Z",
+            "updated_at": "2024-02-01T12:00:00.000Z",
+            "category_id": 2,
+            "city": "Ciudad del Evento 1"
+        },
+        {
+            "id": 5,
+            "name": "FESTIVAL DE MÚSICA LATINA",
+            "event_date": "2024-02-05T00:00:00.000Z",
+            "description": "Disfruta de una noche llena de ritmos latinos en el Festival de Música Latina. Los mejores artistas de la región te harán bailar y vibrar con sus éxitos más calientes.",
+            "location": "Estadio Roberto Meléndez",
+            "address": "Carrera 46 # 79 - 00",
+            "minimum_age": 16,
+            "image": "../../assets/img-content/img1.png",
+            "created_at": "2024-02-03T10:30:00.000Z",
+            "updated_at": "2024-02-03T10:30:00.000Z",
+            "category_id": 3,
+            "city": "Barranquilla"
+          },
+          {
+            "id": 6,
+            "name": "EXPOSICIÓN DE ARTE MODERNO",
+            "event_date": "2024-02-07T00:00:00.000Z",
+            "description": "Admira las obras de los artistas contemporáneos más innovadores en la Exposición de Arte Moderno. Una experiencia visual única que te sumergirá en el mundo del arte contemporáneo.",
+            "location": "Museo Nacional de Colombia",
+            "address": "Carrera 7 # 28 - 66",
+            "minimum_age": 0,
+            "image": "../../assets/img-content/img2.png",
+            "created_at": "2024-02-05T09:45:00.000Z",
+            "updated_at": "2024-02-05T09:45:00.000Z",
+            "category_id": 4,
+            "city": "Bogotá"
+          },
+          {
+            "id": 7,
+            "name": "CONCIERTO DE ROCK ALTERNATIVO",
+            "event_date": "2024-02-10T00:00:00.000Z",
+            "description": "Vive la energía del rock alternativo en este concierto inolvidable. Bandas destacadas te llevarán en un viaje musical lleno de potencia y emociones fuertes.",
+            "location": "Coliseo El Campín",
+            "address": "Calle 57 # 17 - 71",
+            "minimum_age": 14,
+            "image": "../../assets/img-content/img3.png",
+            "created_at": "2024-02-08T15:20:00.000Z",
+            "updated_at": "2024-02-08T15:20:00.000Z",
+            "category_id": 5,
+            "city": "Bogotá"
+          },
+          {
+            "id": 8,
+            "name": "FESTIVAL DE CINE INDEPENDIENTE",
+            "event_date": "2024-02-15T00:00:00.000Z",
+            "description": "Descubre nuevas perspectivas y voces en el Festival de Cine Independiente. Películas innovadoras y creativas te esperan en este evento cinematográfico imperdible.",
+            "location": "Teatro Jorge Eliécer Gaitán",
+            "address": "Carrera 7 # 22 - 47",
+            "minimum_age": 18,
+            "image": "../../assets/img-content/img4.png",
+            "created_at": "2024-02-13T08:00:00.000Z",
+            "updated_at": "2024-02-13T08:00:00.000Z",
+            "category_id": 6,
+            "city": "Bogotá"
+          },
+          {
+            "id": 9,
+            "name": "COMPETENCIA DE SURF",
+            "event_date": "2024-02-20T00:00:00.000Z",
+            "description": "Las olas esperan a los surfistas más intrépidos en la Competencia de Surf. Disfruta de la destreza y el estilo de los mejores surfistas en esta emocionante competición.",
+            "location": "Playa El Rodadero",
+            "address": "Cra. 1 # 14 - 31",
+            "minimum_age": 16,
+            "image": "../../assets/img-content/img1.png",
+            "created_at": "2024-02-18T11:10:00.000Z",
+            "updated_at": "2024-02-18T11:10:00.000Z",
+            "category_id": 7,
+            "city": "Santa Marta"
+          }
     ]
 }

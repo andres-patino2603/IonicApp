@@ -11,9 +11,14 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <ion-list>
+      <ion-list lines="none">
         <ion-item>
-          Home
+          <ion-icon name="home-outline" ></ion-icon>
+          <div>Home</div>
+        </ion-item>
+        <ion-item (click)="GoToIntro()">
+          <ion-icon name="planet-outline"></ion-icon>
+          <div>Intro</div>
         </ion-item>
       </ion-list>
     </ion-content>

@@ -1,3 +1,30 @@
 ion-content{
     --background: #ffffff83;
 }
+ion-toolbar{
+    --background: #fff;
+    --color: black;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    --font-family: 'Nunito', sans-serif;
+}
+
+ion-list{
+    background: #ffffff;
+}
+
+ion-item {
+    --background: #ffffff;
+    --color: black;
+    --font-family: 'Nunito', sans-serif;
+    --border-width: 0; /* Eliminar el borde */
+    position: relative; /* Establecer posición relativa para alinear el icono */
+}
+
+ion-item ion-icon {
+    color: black;
+    padding-right: 10px;
+  }
+  
